@@ -8,12 +8,13 @@ import {
   Link
 } from "react-router-dom";
 import UsersPage from './screens/users.page.tsx';
-import { TeamOutlined, FireOutlined, PlayCircleOutlined } from
+import { TeamOutlined, FireOutlined, PlayCircleOutlined, CommentOutlined } from
   '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu } from 'antd';
 import './App.scss';
 import TracksPage from './screens/tracks.page.tsx';
+import CommentsPage from './screens/comments.page.tsx';
 
 const items: MenuProps['items'] = [
   {
@@ -30,6 +31,11 @@ const items: MenuProps['items'] = [
     label: <Link to='/tracks'>Manage Tracks</Link>,
     key: 'tracks',
     icon: <PlayCircleOutlined />,
+  },
+  {
+    label: <Link to='/comments'>Manage Commnents</Link>,
+    key: 'comments',
+    icon: <CommentOutlined />,
   },
 
 ];
@@ -99,6 +105,10 @@ const router = createBrowserRouter([
       {
         path: "/tracks",
         element: <TracksPage />,
+      },
+      {
+        path: "/comments",
+        element: <CommentsPage />,
       },
     ]
   },
